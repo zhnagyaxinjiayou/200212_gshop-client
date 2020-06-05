@@ -1,10 +1,22 @@
 <template>
-  <div></div>
+  <div>
+    <Header></Header>
+    <!-- 一级路由显示区域 -->
+    <router-view></router-view>
+    <Footer></Footer>
+  </div>
 </template>
 
 <script>
+import Header from './components/Header'
+import Footer from './components/Footer'
+
 export default {
-  name: '',
+  name: 'App',
+  components:{
+    Header,
+    Footer
+  }
 }
 </script>
 
