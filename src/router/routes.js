@@ -1,9 +1,11 @@
-//应用所有路由配置数组
-
+/*
+应用的所有路由配置的数组
+*/
 import Home from "../pages/Home";
 import Search from "../pages/Search";
-import Reginster from "../pages/Reginster";
-import Login from "../pages/Login";
+import Register from "../pages/Register";
+// import Login from "../pages/Login";
+import Login from "@/pages/Login";
 
 export default [
   {
@@ -15,8 +17,8 @@ export default [
     component: Search
   },
   {
-    path: "/reginster",
-    component: Reginster
+    path: "/register",
+    component: Register
   },
   {
     path: "/login",
