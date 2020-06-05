@@ -13,15 +13,26 @@ export default [
     component: Home
   },
   {
-    path: "/search",
+    name:'search',//一旦有params参数，想用push()的对象语法，必须有name配置，要么无法使用路径
+    // 搜索路由
+    path: "/search/:keyword?",//带：的对应的就是params参数
     component: Search
   },
   {
+    // 注册路由
     path: "/register",
-    component: Register
+    component: Register,
+    meta:{
+      isHideFooter:true
+    }
+
   },
   {
+    // 登录 路由
     path: "/login",
-    component: Login
+    component: Login,
+    meta:{
+      isHideFooter:true
+    }
   }
 ];
