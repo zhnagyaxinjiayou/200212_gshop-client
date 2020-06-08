@@ -1,20 +1,13 @@
 <template>
     <div class="type-nav">
       <div class="container">
-          <h2 class="all">全部商品分类</h2>
-          <nav class="nav">
-              <a href="###">服装城</a>
-              <a href="###">美妆馆</a>
-              <a href="###">尚品汇超市</a>
-              <a href="###">全球购</a>
-              <a href="###">闪购</a>
-              <a href="###">团购</a>
-              <a href="###">有趣</a>
-              <a href="###">秒杀</a>
-          </nav>
+         <div >
+            <h2 class="all">全部商品分类</h2>
+
           <div class="sort">
               <div class="all-sort-list2">
-                  <div class="item" v-for="(c1, index) in categoryList" :key="c1.categoryId">
+                  <div class="item" :class="{item_on:index===currentIndex}"
+                  v-for="(c1, index) in categoryList" :key="c1.categoryId" @mouseenter="showSubScategorys(index)">
                       <h3>
                           <a href="javascript:">{{c1.categoryName}}</a>
                       </h3>
@@ -37,14 +30,37 @@
 
               </div>
           </div>
+         </div>
+
+           <nav class="nav">
+              <a href="###">服装城</a>
+              <a href="###">美妆馆</a>
+              <a href="###">尚品汇超市</a>
+              <a href="###">全球购</a>
+              <a href="###">闪购</a>
+              <a href="###">团购</a>
+              <a href="###">有趣</a>
+              <a href="###">秒杀</a>
+          </nav>
       </div>
   </div>
 </template>
 
 <script>
+// 引入整个Lodash,还没有使用的工具函数也被打包了4M
+// import _ from 'lodash'
+// 只打包了需要的工具函数，只有引入的被打包，打包文件变小了1.4M
+// import throttlr from 'lodash/throttlr'
 import {mapState,mapActions} from 'vuex'
 export default {
   name: 'TyprNav',
+
+  data(){
+    return{
+      currentIndex:-1
+
+    }
+  },
 
   // 3级分类列表的计算属性
   computed: {
@@ -73,7 +89,15 @@ export default {
   },
 
   methods: {
-    ...mapActions(['getCategoryList'])
+    ...mapActions(['getCategoryList']),
+
+    hideSubCategorye(){
+      this.currentIndex=-1
+    },
+
+    showSubScategorys(index){
+      this.currentIndex=index
+    }
   },
 }
 </script>
@@ -188,7 +212,7 @@ export default {
                             }
                         }
 
-                        &:hover {
+                        &.item_on {
                           background-color: pink;
                             .item-list {
                                 display: block;
