@@ -1,0 +1,38 @@
+[
+  {
+    "id":1,
+    "name":"张一山",
+    "age":"28",
+    "address":{
+  
+    },
+    "like":["foot","basket"]
+  },
+  {
+    "id":2,
+    "name":"杨紫",
+    "age":"25",
+    "address":{
+  
+    },
+    "like":["foot","basket"]
+  },
+  {
+    "id":3,
+    "name":"杨洋",
+    "age":"20",
+    "address":{
+  
+    },
+    "like":["foot","basket"]
+  },
+  {
+    "id":4,
+    "name":"张艺兴",
+    "age":"30",
+    "address":{
+  
+    },
+    "like":["foot","basket"]
+  }
+]

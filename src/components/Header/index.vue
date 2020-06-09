@@ -74,13 +74,14 @@ export default {
     // push方法能传一个路径来进行跳转，也可以传一个对象，对象声明跳转路径，携带参数等
     if(keyword){
       location.params={keyword}
-      location.query={keyword2:keyword.toUpperCase()}
     }
        // replace方式
     this.$router.push(location,()=>{})
     // replace方式
     // this.$router.replace(location,()=>{})
 
+    // 有什么带什么: 如果有就自然带上了, 如果没有就没携带上
+    location.query=this.$router.query
 
     // this.$router.push(location,()=>{
     //   //使用的是vue-router3.1.0的语法(内部不会抛出错误的promise)
@@ -91,6 +92,7 @@ export default {
     //  this.$router.push(location).catch(()=>{
     //    console.log('出错了')
     //  })
+    this.$router.push(location)
 
 
   },

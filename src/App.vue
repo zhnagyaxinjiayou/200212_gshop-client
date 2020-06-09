@@ -10,6 +10,7 @@
 <script>
 import Header from './components/Header'
 import Footer from './components/Footer'
+// import { reqCategoryList ,reqFloors} from './api'
 // import {reqCategoryList} from './api'
 // 在组建里面最常用的两个发请求的方法
 // mounted(){}  created(){比mounted早一点点}
@@ -20,6 +21,9 @@ export default {
   //  reqCategorys()返回的是promise,用async和await简化promise的使用
     // const result = await reqCategoryList()
     // console.log('result',result)
+
+    this.$store.dispatch('getCategoryList')
+
   },
   components:{
     Header,

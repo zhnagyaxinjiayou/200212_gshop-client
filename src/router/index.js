@@ -12,8 +12,8 @@ const originreplace=VueRouter.prototype.replace
 VueRouter.prototype.push=function (location,onComolete,onAbort) {
   if(!onComolete && !onAbort){
     // 1.需要是用call指定this
-    // 2.需要返回产生的pro
-  return  originPush.vall(this,location).catch(error=>{
+    // 2.需要返回产生的promise
+  return  originPush.call(this,location).catch(error=>{
       //
       console.log('---',error.message)
     })
@@ -28,7 +28,7 @@ VueRouter.prototype.push=function (location,onComolete,onAbort) {
   if(!onComolete && !onAbort){
     // 1.需要是用call指定this
     // 2.需要返回产生的pro
-  return  originreplace.vall(this,location).catch(error=>{
+  return  originreplace.call(this,location).catch(error=>{
       //
       console.log('---',error.message)
     })
